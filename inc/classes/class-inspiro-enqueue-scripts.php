@@ -105,6 +105,10 @@ if ( ! class_exists( 'Inspiro_Enqueue_Scripts' ) ) {
 
 			// Add custom fonts.
 			Inspiro_Fonts_Manager::render_fonts();
+
+			// Add additional custom CSS from the customizer.
+			$additional_custom_css = wp_get_custom_css();
+			wp_add_inline_style( 'inspiro-block-editor-style', $additional_custom_css );
 		}
 
 		/**
